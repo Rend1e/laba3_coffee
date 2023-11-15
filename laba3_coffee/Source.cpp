@@ -50,16 +50,16 @@ public: int getsugar() {
 
 int main() {
 	setlocale(LC_ALL, "rus");
-	cout << "Торговый автомат\nВыберите кофе и нажмите на соответствующую цифру:\n";
+	cout << "РўРѕСЂРіРѕРІС‹Р№ Р°РІС‚РѕРјР°С‚\nР’С‹Р±РµСЂРёС‚Рµ РєРѕС„Рµ Рё РЅР°Р¶РјРёС‚Рµ РЅР° СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰СѓСЋ С†РёС„СЂСѓ:\n";
 	cofee cofeelist[6] =
 	{
 		//kakoe coffee imeet takoe znach (1)
-		cofee("Латте", "Горький", "Карамель", 31),
-		cofee("Капучино", "Горький", "Сливки", 31),
-		cofee("Кофейное молоко", "Сладкий", "Молоко", 31),
-		cofee("Эспрессо", "Горький", "Молоко", 31),
-		cofee("Латте-макиато", "Сладкий", "Вишневый сироп", 31),
-		cofee("Белое кофе", "Сладкий", "Молоко", 31)
+		cofee("Р›Р°С‚С‚Рµ", "Р“РѕСЂСЊРєРёР№", "РљР°СЂР°РјРµР»СЊ", 31),
+		cofee("РљР°РїСѓС‡РёРЅРѕ", "Р“РѕСЂСЊРєРёР№", "РЎР»РёРІРєРё", 31),
+		cofee("РљРѕС„РµР№РЅРѕРµ РјРѕР»РѕРєРѕ", "РЎР»Р°РґРєРёР№", "РњРѕР»РѕРєРѕ", 31),
+		cofee("Р­СЃРїСЂРµСЃСЃРѕ", "Р“РѕСЂСЊРєРёР№", "РњРѕР»РѕРєРѕ", 31),
+		cofee("Р›Р°С‚С‚Рµ-РјР°РєРёР°С‚Рѕ", "РЎР»Р°РґРєРёР№", "Р’РёС€РЅРµРІС‹Р№ СЃРёСЂРѕРї", 31),
+		cofee("Р‘РµР»РѕРµ РєРѕС„Рµ", "РЎР»Р°РґРєРёР№", "РњРѕР»РѕРєРѕ", 31)
 	};
 	for (int i = 0; i < sizeof(cofeelist) / sizeof(cofee); i++) {
 		std::cout << i << ") " << cofeelist[i].gettype() << endl;
@@ -67,42 +67,42 @@ int main() {
 	int sel;
 	cin >> sel;
 	while ((sel < 0) || (sel > sizeof(cofeelist) / sizeof(cofee) - 1)) {
-		cout << "Введите корректное число!\n";
+		cout << "Р’РІРµРґРёС‚Рµ РєРѕСЂСЂРµРєС‚РЅРѕРµ С‡РёСЃР»Рѕ!\n";
 		cin >> sel;
 	}
-	cout << "Вы выбрали " << sel << " пункт.\n";
+	cout << "Р’С‹ РІС‹Р±СЂР°Р»Рё " << sel << " РїСѓРЅРєС‚.\n";
 	while (true) {
 		//vivod (1)
-		cout << "Название кофе: " << cofeelist[sel].gettype() << endl;
-		cout << "Количество сахара: " << cofeelist[sel].getsugar() << " г." << endl;
-		cout << "Добавка: " << cofeelist[sel].getadd() << endl;
-		cout << "Вкус: " << cofeelist[sel].getaste() << endl;
-		cout << "Если вы хотите поменять какой-либо параметр нажмите соотвествующую клавишу (1-Количество сахара, 2-Добавка; 0-Ничего не менять, взять кофе.)\n";
+		cout << "РќР°Р·РІР°РЅРёРµ РєРѕС„Рµ: " << cofeelist[sel].gettype() << endl;
+		cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃР°С…Р°СЂР°: " << cofeelist[sel].getsugar() << " Рі." << endl;
+		cout << "Р”РѕР±Р°РІРєР°: " << cofeelist[sel].getadd() << endl;
+		cout << "Р’РєСѓСЃ: " << cofeelist[sel].getaste() << endl;
+		cout << "Р•СЃР»Рё РІС‹ С…РѕС‚РёС‚Рµ РїРѕРјРµРЅСЏС‚СЊ РєР°РєРѕР№-Р»РёР±Рѕ РїР°СЂР°РјРµС‚СЂ РЅР°Р¶РјРёС‚Рµ СЃРѕРѕС‚РІРµСЃС‚РІСѓСЋС‰СѓСЋ РєР»Р°РІРёС€Сѓ (1-РљРѕР»РёС‡РµСЃС‚РІРѕ СЃР°С…Р°СЂР°, 2-Р”РѕР±Р°РІРєР°; 0-РќРёС‡РµРіРѕ РЅРµ РјРµРЅСЏС‚СЊ, РІР·СЏС‚СЊ РєРѕС„Рµ.)\n";
 		int choice = 0;
 		cin >> choice;
-		while ((choice != 1) && (choice != 2) && (choice != 0)) { cout << "Повторите ввод!\n"; cin >> choice; }
+		while ((choice != 1) && (choice != 2) && (choice != 0)) { cout << "РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ!\n"; cin >> choice; }
 		if (choice == 1) {
 			int newpar;
-			cout << "Введите желаемое количество сахара в граммах\n";
+			cout << "Р’РІРµРґРёС‚Рµ Р¶РµР»Р°РµРјРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃР°С…Р°СЂР° РІ РіСЂР°РјРјР°С…\n";
 			cin >> newpar;
 			cofeelist[sel].setsugar(newpar);
 		}
 		else if (choice == 2) {
-			cout << "Выберите добавку (1-Карамель, 2-Вишневый сироп, 3-Молоко, 4-Сливки)\n";
+			cout << "Р’С‹Р±РµСЂРёС‚Рµ РґРѕР±Р°РІРєСѓ (1-РљР°СЂР°РјРµР»СЊ, 2-Р’РёС€РЅРµРІС‹Р№ СЃРёСЂРѕРї, 3-РњРѕР»РѕРєРѕ, 4-РЎР»РёРІРєРё)\n";
 			int newpar;
 			cin >> newpar;
-			if (newpar == 1) cofeelist[sel].setadd("Карамель");
-			else if (newpar == 2)cofeelist[sel].setadd("Вишневый сироп");
-			else if (newpar == 3)cofeelist[sel].setadd("Молоко");
-			else if (newpar == 4)cofeelist[sel].setadd("Сливки");
+			if (newpar == 1) cofeelist[sel].setadd("РљР°СЂР°РјРµР»СЊ");
+			else if (newpar == 2)cofeelist[sel].setadd("Р’РёС€РЅРµРІС‹Р№ СЃРёСЂРѕРї");
+			else if (newpar == 3)cofeelist[sel].setadd("РњРѕР»РѕРєРѕ");
+			else if (newpar == 4)cofeelist[sel].setadd("РЎР»РёРІРєРё");
 		}
 		else {
 			break;
 		}
 	}
-	cout << "Спасибо за покупку.\n";
+	cout << "РЎРїР°СЃРёР±Рѕ Р·Р° РїРѕРєСѓРїРєСѓ.\n";
 	//vivod dannyukh (pokupki)
-	cout << "Ваше " << cofeelist[sel].gettype() << " с " << cofeelist[sel].getadd() << " и " << cofeelist[sel].getsugar() << " грамм сахара\nПриходите еще\n";
+	cout << "Р’Р°С€Рµ " << cofeelist[sel].gettype() << " СЃ " << cofeelist[sel].getadd() << " Рё " << cofeelist[sel].getsugar() << " РіСЂР°РјРј СЃР°С…Р°СЂР°\nРџСЂРёС…РѕРґРёС‚Рµ РµС‰Рµ\n";
 	system("pause");
 	return 0;
 }
